@@ -19,6 +19,15 @@
           class="spring_app.src.RockMusic">
     </bean>
 
+    <bean id="musicBean"
+          class="spring_app.src.SomeMusic"
+          init-method="doInit"
+          destroy-method="doDestroy"
+          factory-method="getSomeMusic">
+
+        <!-- scope="prototype" />-->
+    </bean>
+
 
     <bean id="musicPlayer" class="spring_app.src.MusicPlayer" scope="prototype">
         <property name="playList">
