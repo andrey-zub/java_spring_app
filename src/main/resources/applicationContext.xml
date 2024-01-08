@@ -20,8 +20,7 @@
     </bean>
 
 
-    <bean id="musicPlayer"
-          class="spring_app.src.MusicPlayer">
+    <bean id="musicPlayer" class="spring_app.src.MusicPlayer" scope="prototype">
         <property name="playList">
             <list>
                 <ref bean="jassBean"/>
@@ -29,7 +28,6 @@
                 <ref bean="rockBean"/>
             </list>
         </property>
-
         <property name="name"  value="${musicPlayer.name}"/>
         <property name="volume"  value="${musicPlayer.volume}"/>
 
