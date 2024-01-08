@@ -1,8 +1,11 @@
 package spring_app.src;
 
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Component("player")
 public class MusicPlayer {
     private Music music;
     private String name;

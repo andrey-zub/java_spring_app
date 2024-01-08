@@ -1,5 +1,8 @@
 package spring_app.src;
 
+import org.springframework.stereotype.Component;
+
+@Component("musicBean")
 public class SomeMusic implements Music{
    private SomeMusic() {};
    public static SomeMusic getSomeMusic(){

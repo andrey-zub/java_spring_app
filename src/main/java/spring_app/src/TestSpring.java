@@ -9,12 +9,13 @@ public class TestSpring {
                 "applicationContext.xml"
         );
 
-         //Music  music = context.getBean("musicBean", Music.class);
-        // MusicPlayer plr_1 = context.getBean("musicPlayer", MusicPlayer.class);
-      //   MusicPlayer plr_2 = context.getBean("musicPlayer", MusicPlayer.class);
+/**/    System.out.println("///some_music\n");
         SomeMusic some = context.getBean("musicBean", SomeMusic.class);
+        System.out.println( "Genre:\t" + some.getGenre() + "\nSONG:\t" + some.getSong());
 
-        System.out.println("SONG:\t" + some.getSong());
+        System.out.println("\n///jass_music\n");
+        JassMusic jass = context.getBean("jassMusic", JassMusic.class);
+        System.out.println( "Genre:\t" + jass.getGenre() + "\nSONG:\t" + jass.getSong());
 
 
 

@@ -8,39 +8,7 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
+    <context:component-scan base-package="spring_app.src"/>
 
-    <bean id="jassBean"
-          class="spring_app.src.JassMusic">
-    </bean>
-    <bean id="classicBean"
-          class="spring_app.src.ClassicalMusic">
-    </bean>
-    <bean id="rockBean"
-          class="spring_app.src.RockMusic">
-    </bean>
-
-    <bean id="musicBean"
-          class="spring_app.src.SomeMusic"
-          init-method="doInit"
-          destroy-method="doDestroy"
-          factory-method="getSomeMusic">
-
-        <!-- scope="prototype" />-->
-    </bean>
-
-
-    <bean id="musicPlayer" class="spring_app.src.MusicPlayer" scope="prototype">
-        <property name="playList">
-            <list>
-                <ref bean="jassBean"/>
-                <ref bean="classicBean"/>
-                <ref bean="rockBean"/>
-            </list>
-        </property>
-        <property name="name"  value="${musicPlayer.name}"/>
-        <property name="volume"  value="${musicPlayer.volume}"/>
-
-
-    </bean>
 
 </beans>
