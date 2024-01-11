@@ -10,6 +10,8 @@ public class Computer {
 private  int id;
 private  MusicPlayer musicPlayer;
 
+    public Computer() {};
+
 @Autowired
 public Computer(MusicPlayer musicPlayer){
     this.id = ThreadLocalRandom.current().nextInt(1,256);

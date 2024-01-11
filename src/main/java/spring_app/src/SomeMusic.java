@@ -1,13 +1,26 @@
 package spring_app.src;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-@Component("musicBean")
+import java.util.ArrayList;
+import java.util.List;
+
+@Component
 public class SomeMusic implements Music{
-   private SomeMusic() {};
-   public static SomeMusic getSomeMusic(){
-       return new SomeMusic();
-   };
+
+    @Value("#{'${someMusic.songs}'.split(',')}")
+    private List<String> songs = new ArrayList<>();
+   public SomeMusic() {};
+
+//   public static SomeMusic getSomeMusic(){
+//       return new SomeMusic();
+//   };
+
+    @Override
+    public List<String> getSongsList() {
+        return this.songs;
+    }
 
     @Override
     public String getSong() {
